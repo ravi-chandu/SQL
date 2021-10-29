@@ -9,6 +9,7 @@
    3. [AND, BETWEEN, OR](#and-between-or)
 1. [NOT](#not)
 1. [DERIVED COLUMN](#derived-column)
+1. [COUNT](#count)
 
 
 
@@ -152,3 +153,22 @@ FROM transcation
 *here we create new column and name it as profit_percent*
 
 ---
+
+## COUNT
+
+- `Count` - helpful for counting the number of rows
+
+```SQL
+SELECT COUNT(*) AS number_of_customers
+ FROM customers_table
+ ```
+ 
+ *here we get number of customers and we can use specific column if there is nulls in column*
+ 
+ ---
+ 
+ ## 
+ 
+ 
+
+
