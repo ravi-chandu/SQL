@@ -6,7 +6,7 @@
 1. [WHERE](#where)
    1. [LIKE](#like)
    2. [IN](#in)
-   3. [AND, BETWEEN, OR](#and,-between,-or)
+   3. [AND, BETWEEN, OR](#and-between-or)
 1. [NOT](#not)
 1. [DERIVED COLUMN](#derived-column)
 
