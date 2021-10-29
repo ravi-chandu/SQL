@@ -3,6 +3,9 @@
 
 ## Topics
 - Basic Sql Functions
+- WHERE
+ - LIKE
+
 
 
 
@@ -39,16 +42,6 @@ WHERE sales_amount > 1000;
 
 ---
 
-- `Derived Columns` we can create a new column using existing columns like adding two columns or calculating percentage and give column name by AS statement but we can simply enter name after the condition it automatically take it as column header.
-
-```SQL
-SELECT orders_id, sales_amount, (profit/sales_amount)*100 profit_percent
-FROM transcation
-```
-*here we create new column and name it as profit_percent*
-
----
-
 - `LIKE` - if we want to filter the column then we use `WHERE`, but if we want to filter non-numerical coulmns(Text Columns) by a specific word in this case WHERE function directly not work.
 
 Example: customers names - ram kiran, ram krishana, sultan, ashok
@@ -75,7 +68,9 @@ If we use `%` symbol on left side '%ram' - it filters only where the name ends w
 
 we can use single letters also like name starts with r - 'r%'
 
+
 ---
+
 
 - `IN` - If we want to filter the columns by more than one value then we use IN function
 ```SQL
@@ -83,20 +78,65 @@ SELECT markets, customer_names, sales_amount
  FROM transcations
  WHERE markets IN ('hyd', 'kkr', 'alu')
  ```
+ 
  *here we get data relating that specific markets*
  
+
  ---
+ 
+`AND, BETWEEN, OR` - when we to filter the data based on multiple conditions then we use AND, BETWEEN.
+
+AND
+```SQL
+SELECT markets, customer_names, sales_amount
+ FROM transcations
+WHERE sales_amount >= 1000 AND Markets = 'hyd';
+ ``` 
+ 
+*here we filtered where customers market = hyd & sales amount >= 1000*
+
+BETWEEN
+```SQL
+SELECT markets, customer_names, sales_amount
+ FROM transcations
+WHERE sales_amount BETWEEN 1000 AND 1500;
+ ``` 
+  
+*here we filtered sales amount between 1000 to 1500*
+
+OR 
+```SQL
+SELECT markets, customer_names, sales_amount
+ FROM transcations
+WHERE markets = 'hyd' OR customer_names = 'ram';
+ ``` 
+ 
+*here we get markets markets is hyd & customers_names with ram*
+
+We can use all these in single query also
+
+```SQL
+SELECT markets, customer_names, sales_amount
+ FROM transcations
+WHERE (sales_amount BETWEEN 1000 AND 1500) 
+AND markets = 'hyd';
+ ```  
+ 
+*here we get sales amount btween 1000 to 1500 where markets is filtered hyd - sales in hyd market between 1000 to 1500*
+
+---
  
  `NOT` - we can use NOT for pulling other than mentioned items, we can use with - NOT LIKE, NOT IN.
  
- ---
+---
  
-`AND, BETWEEN` - when we to filter the data based on multiple conditions then we use AND, BETWEEN.
+- `Derived Columns`  - we can create a new column using existing columns like adding two columns or calculating percentage and give column name by AS statement but we can simply enter name after the condition it automatically take it as column header.
 
-AN
+```SQL
+SELECT orders_id, sales_amount, (profit/sales_amount)*100 profit_percent
+FROM transcation
+```
 
-  
+*here we create new column and name it as profit_percent*
 
-
-
-
+---
