@@ -1,16 +1,19 @@
 # SQL
 *Breifly I will explain some sql functions*
 
-## Topics
-- Basic Sql Functions
-- WHERE
- - LIKE
+## Topics 
+1. [Basic Sql Functions](#basic-sql-functions)
+1. [WHERE](#where)
+   1. [LIKE](#like)
+   2. [IN](#in)
+   3. [AND, BETWEEN, OR](#and,-between,-or)
+1. [NOT](#not)
+1. [DERIVED COLUMN](#derived-column)
 
 
 
 
-
-## Basic SQl Functions
+## Basic SQL Functions
  
 - `SELECT` - Select the columns we want (if we want to pull all the columns in the table then we don't need to type all the column names - just enter *  )
  
@@ -31,6 +34,7 @@ LIMIT 10;
 
 ---
 
+## WHERE
 - `WHERE` - it is acts like a filter *where the orders value is more than $1000* like that. common symbols used in WHERE statement are(for numerical data) >, <, >=, <=, =, !=. we can use it for non numerical columns by using = , !=
 
 ```SQL
@@ -42,6 +46,7 @@ WHERE sales_amount > 1000;
 
 ---
 
+## LIKE
 - `LIKE` - if we want to filter the column then we use `WHERE`, but if we want to filter non-numerical coulmns(Text Columns) by a specific word in this case WHERE function directly not work.
 
 Example: customers names - ram kiran, ram krishana, sultan, ashok
@@ -71,6 +76,7 @@ we can use single letters also like name starts with r - 'r%'
 
 ---
 
+## IN
 
 - `IN` - If we want to filter the columns by more than one value then we use IN function
 ```SQL
@@ -83,6 +89,8 @@ SELECT markets, customer_names, sales_amount
  
 
  ---
+ 
+ ## AND, BETWEEN, OR
  
 `AND, BETWEEN, OR` - when we to filter the data based on multiple conditions then we use AND, BETWEEN.
 
@@ -125,11 +133,15 @@ AND markets = 'hyd';
 *here we get sales amount btween 1000 to 1500 where markets is filtered hyd - sales in hyd market between 1000 to 1500*
 
 ---
- 
+
+## NOT 
+
  `NOT` - we can use NOT for pulling other than mentioned items, we can use with - NOT LIKE, NOT IN.
  
 ---
  
+## DERIVED COLUMN
+
 - `Derived Columns`  - we can create a new column using existing columns like adding two columns or calculating percentage and give column name by AS statement but we can simply enter name after the condition it automatically take it as column header.
 
 ```SQL
