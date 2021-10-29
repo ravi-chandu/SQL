@@ -10,7 +10,8 @@
 1. [NOT](#not)
 1. [DERIVED COLUMN](#derived-column)
 1. [COUNT](#count)
-
+1. [SUM](#sum)
+1. [MIN & MAX](#min-max)
 
 
 
@@ -167,7 +168,31 @@ SELECT COUNT(*) AS number_of_customers
  
  ---
  
- ## 
+ ## SUM
+ 
+ - `Sum` - adding the all the values in column
+
+```SQL
+SELECT SUM(sales_amount) AS total_sales
+ FROM transcations
+ ```
+ 
+ *here we get total sales value*
+ 
+---
+
+## MIN, MAX
+
+- `MIN, MAX` - pull the min & max value in the column
+
+```SQL
+SELECT MIN(sales_amount) min_sales_amount
+       MAX(sales_amount) max_sales_amount
+  FROM transcation
+  ```
+  
+  ---
+    
  
  
 
