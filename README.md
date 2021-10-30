@@ -10,9 +10,10 @@
 1. [NOT](#not)
 1. [DERIVED COLUMN](#derived-column)
 1. [COUNT](#count)
+1. [DISTINCT](#distinct)
 1. [SUM](#sum)
 1. [MIN & MAX](#min-max)
-
+1. [GROUP BY](#group-by)
 
 
 ## Basic SQL Functions
@@ -168,6 +169,22 @@ SELECT COUNT(*) AS number_of_customers
  
  ---
  
+ 
+ ## DISTINCT 
+ 
+ - `Distinct` - it help us to pull the unique items in the column
+
+```SQL
+SELECT DISTINCT customers_id
+FROM transcation
+```
+
+*here we get all thr unique customers*
+
+---
+
+
+ 
  ## SUM
  
  - `Sum` - adding the all the values in column
@@ -193,7 +210,21 @@ SELECT MIN(sales_amount) min_sales_amount
   
   ---
     
- 
- 
+## GROUP BY
 
+- `Group By` - Group By helps us to group the similiar items like how much each customer bought this year,(here cutomer may purchase multiple times in year but we can group it in single value)
+
+```SQL
+SELECT c.customers_id, SUM(sales_amount)  sales_amount
+ FROM customers c
+ JOIN transcations t
+ ON c.customers_id = t.customers_id
+ GROUP BY customer_id
+ ORDER BY customer_id
+ ```
+ 
+ *here we get the total value of each customer purchase, we want to know for this year only then we filter it using WHERE clause ( WHERE order_date BETWEEN 01/01/2021 AND 31/12/2021)*
+ 
+ ---
+ 
 
