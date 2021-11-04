@@ -1,5 +1,5 @@
 # SQL
-*Breifly I will explain some sql functions*
+
 
 ## Topics 
 1. [Basic Sql Functions](#basic-sql-functions)
