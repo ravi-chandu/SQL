@@ -279,6 +279,6 @@ SELECT c.customers_id, SUM(sales_amount) sales_amount
  
  ---
  
- *cont...*
+
 
 
